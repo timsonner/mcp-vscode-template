@@ -8,7 +8,7 @@ https://docs.astral.sh/uv/getting-started/installation/
 Project setup is heavily based off of Renae Schilg's work. I didn't even bother to change the project name as an homage although I did deviate on a few things, namely not using Claude Desktop, but also modified `external-recon.py` fairly heavily.  
 https://nae-bo.medium.com/building-your-first-offensive-security-mcp-server-dd655e258d5f
 ```
-# Create a new directory for our project
+# Initialize project
 uv init external-recon
 cd external-recon
 ```
@@ -22,15 +22,12 @@ Mileage will vary... It may not be necessary.
 uv venv --python 3.11
 source .venv/bin/activate
 
-# Install dependencies
+# Install mcp
 uv add "mcp[cli]"
 
 # Create MCP server .py file
 touch external-recon.py
 ```
-
-I had to modify the python versions in `.python-version` to `3.11` or something above 3.8 or 3.10  
-I also had to modify the line `requires-python = ">=3.11"` in `pyroject.toml` to something above 3.8 or 3.10 
 
 The VS Code `settings.json` should be modified.  
 Use `which uv` to find the path to uv.  

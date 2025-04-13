@@ -26,7 +26,10 @@ source .venv/bin/activate
 # Install mcp
 uv add "mcp[cli]"
 
-# Create MCP server .py file
+# Install dnspython (dependency for external-recon.py, not necessary for all projects, but for this one yes)
+uv pip install dnspython
+
+# Create MCP server external-recon.py file or empty and rename main.py
 touch external-recon.py
 ```
 
@@ -53,6 +56,7 @@ settings.json
 
 One of the main differences between Renae's work and mine is I used `@mcp.tool()` instead of `@mcp.prompt()` in `external-recon.py`
 
+### Start the server  
 From the venv of the project, start the server with `uv run external-recon.py`  
 Example:  
 ```bash
